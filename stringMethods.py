@@ -1,6 +1,6 @@
 # Aplicacion de los metodos
-# hola = "asd,asd,ooo"
-# print(hola.split(","))
+hola = "asd,asd,ooo"
+print(hola.split(","))
 
 # String Methods
 # --- .upper
@@ -22,14 +22,6 @@
 # --- .split separa con el string que le pasemos y retorna un array
 #       print(hola.split(",")) ----> ['asd', 'asd', 'ooo'] 
 
-# Array Methods
-lista = list(["asdasd","asdasd", "asdasd"])
-print(len(lista))
 
-# --- .len ---> js :)  print(len(lista))
-# --- .append lista.append("asdas","eeee") agrega al final
-# --- .insert inserta en la posicion que le indiquemos lista.insert(2, "hola")
-# --- .extend agrega varios elementos a la lista le pasamos un array pero, lo
-#       agrega separado ----> lista.extend(["hola", "chau"])
-# --- .pop elimima un elemento segun la posicion que le pasemos .pop(4)
-# --- .remove elimina el parametro que le pasemos .remove("asdasd")
+
+
