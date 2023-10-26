@@ -79,3 +79,32 @@ mi_lista = [64, 34, 25, 12, 22, 11, 90]
 
 # print("Lista ordenada:")
 # print(mi_lista)
+
+def busquedaPosiciones(numero, lista):
+    pos = -1 # siempre que no se encuentre numero la posicion va a ser -1
+    i = 0
+    while pos == -1 and i < len(lista): 
+        if lista[i] == numero: # si el iterador en la lista trae el mismo numero que se paso como parametro
+            pos = i # la posicion se iguala
+        i = i+1 # si no es igual se suma y se ejecuta el ciclo de nuevo
+    print(pos)
+    return pos
+
+# Ejercicio 6 
+
+def busquedaPosiciones(numero, lista):
+    pos = []
+    i = 0
+    while i < len(lista):
+        if lista[i] == numero:
+            pos.append(i)
+        i = i+1
+    print(pos)
+    return pos
+
+# Ejercicio 8 
+
+import random
+
+aleatorio = random.randint(0, 100)
+print(aleatorio)
