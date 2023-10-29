@@ -125,10 +125,9 @@ def noRepetidos():
     cantidad = int(input("Ingrese a cantidad de numeros: "))
     for i in range(cantidad):
         lista.append(random.randint(0, 100))
-    for i in range(len(lista)):
-        if lista[i] == lista[i]:
-            cont = 0
-            cont += 1
-            print(cont, "????")
+    for j in range( i +1, len(lista)):
+        if lista[j] == lista[j]:
+            print("hay repetido")
+            return True
     print(lista)
 noRepetidos()
