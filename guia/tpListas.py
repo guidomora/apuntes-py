@@ -48,7 +48,7 @@ def invertirArray(array):
         nuevoArray.insert(0, array[i])
     return print(nuevoArray) 
 
-lista2 =  [5, 7, 1] #1 7 5
+# lista2 =  [5, 7, 1] #1 7 5
 # invertirArray(lista2)
 
 
@@ -106,5 +106,29 @@ def busquedaPosiciones(numero, lista):
 
 import random
 
-aleatorio = random.randint(0, 100)
-print(aleatorio)
+
+def aleatorio():
+    lista = []
+    terminado = False
+    while terminado == False:
+        aleatorio2 = random.randint(0, 100)
+        if aleatorio2 == 0:
+            terminado = True
+        else:
+            lista.append(aleatorio2)
+            print(lista)
+# aleatorio()
+
+
+def noRepetidos():
+    lista = []
+    cantidad = int(input("Ingrese a cantidad de numeros: "))
+    for i in range(cantidad):
+        lista.append(random.randint(0, 100))
+    for i in range(len(lista)):
+        if lista[i] == lista[i]:
+            cont = 0
+            cont += 1
+            print(cont, "????")
+    print(lista)
+noRepetidos()
