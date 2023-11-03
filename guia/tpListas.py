@@ -131,3 +131,27 @@ def noRepetidos():
             return True
     print(lista)
 noRepetidos()
+
+# dados 5 numeros, ingresarlos y calcular promedio
+# imprimir los num que estaban por arriba del promedio
+
+# def suma():
+#     cant = 5
+#     lista = [] 
+#     for i in range(cant):
+#         numero = int(input("ingrese un numero: "))
+#         lista.append(numero)
+#     print(lista)
+#     total = 0
+#     for j in range(len(lista)):
+#         total = total + lista[j]
+#     print("Total: ", total)
+#     promedio = total / cant
+#     print("promedio: ", promedio)
+#     mayorProm = []
+#     for k in range(len(lista)):
+#         if lista[k] > promedio:
+#             mayorProm.append(lista[k])
+#     print("Mayores que el prom: ", mayorProm)
+    
+# suma()
