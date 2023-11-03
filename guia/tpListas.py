@@ -135,23 +135,46 @@ noRepetidos()
 # dados 5 numeros, ingresarlos y calcular promedio
 # imprimir los num que estaban por arriba del promedio
 
-# def suma():
-#     cant = 5
-#     lista = [] 
-#     for i in range(cant):
-#         numero = int(input("ingrese un numero: "))
-#         lista.append(numero)
-#     print(lista)
-#     total = 0
-#     for j in range(len(lista)):
-#         total = total + lista[j]
-#     print("Total: ", total)
-#     promedio = total / cant
-#     print("promedio: ", promedio)
-#     mayorProm = []
-#     for k in range(len(lista)):
-#         if lista[k] > promedio:
-#             mayorProm.append(lista[k])
-#     print("Mayores que el prom: ", mayorProm)
+def suma():
+    cant = 5
+    lista = [] 
+    for i in range(cant):
+        numero = int(input("ingrese un numero: "))
+        lista.append(numero)
+    print(lista)
+    total = 0
+    for j in range(len(lista)):
+        total = total + lista[j]
+    print("Total: ", total)
+    promedio = total / cant
+    print("promedio: ", promedio)
+    mayorProm = []
+    for k in range(len(lista)):
+        if lista[k] > promedio:
+            mayorProm.append(lista[k])
+    print("Mayores que el prom: ", mayorProm)
     
 # suma()
+
+# -----------------------------------
+
+# ingresar 10 elementos usando la funcion de carga y determinar el max
+# mediante una funcion 
+
+def maxNum(lista):
+    for i in range(len(lista)):
+       if i == 0 or lista[i] > maximo:
+            maximo = lista[i]
+            pos = i
+            print("El maximo es: ", maximo)
+    return(maximo, pos)
+        
+
+def ejercicio(lista):
+    cantidad = 10
+    for i in range(cantidad):
+        numero = int(input("Ingresar :"))
+        lista.append(numero)
+    maxNum(lista)
+    
+    
