@@ -1,37 +1,38 @@
-import random
 
-lista = []
+legajos = []
+calificaciones= []
 
-def agregarNumeros():
-    hasta = int(input("Ingrese la cantidad de numeros en la lista: "))
-    for i in range(0, hasta):
-        lista.append(random.randint(0, hasta))
-
-
-def repetido(arr):
-    repetidos = []
-    for i in range(len(arr)):
-        for j in range(i + 1, len(arr)):
-            if arr[i] == arr[j]:
-                if lista[i] not in repetidos:
-                    repetidos.append(lista[i])
-    print(repetidos)
-    return False
+def ingresarDatos():
+    total = 0
+    legajo = 0
+    aprobados = 0
+    desaprobados = 0
+    while legajo != -1:
+        legajo = int(input("Ingresar su numero de legajo: "))
+        if legajo != -1:
+            legajos.append(legajo)   
     
+    while len(calificaciones) != len(legajos):
+        nota = -1
+        while nota < 1 or nota > 10:
+            nota = int(input("Ingresar la nota para el legajo: "))
+            total += nota
+        calificaciones.append(nota)
+
+    for i in range(len(calificaciones)):
+        promedio = total / len(calificaciones)
+        if calificaciones[i] >= 4:
+            aprobados += 1
+        elif calificaciones[i] < 4:
+            desaprobados += 1
+    print("Promedio: ", promedio,
+          "Aprobados: ", aprobados,
+          "Desaprobados: ", desaprobados)
+            
+                              
+
+
+ingresarDatos()
+print("Legajos: ", legajos)
+print("Calificaciones: ", calificaciones)     
     
-    
-def busqueda(lista, numero):
-    pos = -1
-    i = 0
-    while pos == -1 and i < len(lista):
-        if lista[i] == numero:
-            pos = 1
-        i = i+1
-    return pos
-
-agregarNumeros()
-print(lista)
-repetidos = repetido(lista)
-
-
-
