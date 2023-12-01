@@ -65,20 +65,6 @@ def invertirArray(array):
 # print(lista_ordenada)
 
 
-def burbujeo(lista):
-    for i in range(len(lista) -1):
-        for j in range(len(lista) -1-i):
-            if lista[j] > lista[j+1]:
-                aux = lista[j]
-                lista[j] = lista[j + 1]
-                lista[j + 1] = aux
-
-mi_lista = [64, 34, 25, 12, 22, 11, 90]
-
-# burbujeo(mi_lista)
-
-# print("Lista ordenada:")
-# print(mi_lista)
 
 def busquedaPosiciones(numero, lista):
     pos = -1 # siempre que no se encuentre numero la posicion va a ser -1
