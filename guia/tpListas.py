@@ -163,4 +163,62 @@ def ejercicio(lista):
         lista.append(numero)
     maxNum(lista)
     
+# Ejercicio 2 py pdf de listas
+
+
+
+def search(val, lista):
+    pos = -1
+    i = 0
+    while pos == -1 and i < len(lista):
+        if lista[i] == val:
+            pos = i
+        i = i + 1
+    print(pos)
+    return pos
+
+def maX(lista):
+    for i in range(len(lista)):
+        if i == 0 or lista[i] > maximo:
+            maximo = lista[i]
+    print("El precio maximo es: $",maximo)
+    return maximo
+
+
+productos = []
+precios = []
+
+def carga(cant):
+    while len(productos) < cant:
+        producto = int(input("Ingrese un producto: "))
+        precio = int(input("Ingrese un precio: "))
+        exists = search(producto, productos)
+        if producto > 99 and precio > 0 and exists == -1:
+            productos.append(producto)
+            precios.append(precio)
+        else :
+            print("nooo")
+        
+    for i in range(cant):
+        print("Producto: ", productos[i], "--Precio-->", precios[i]) 
+        
+def busquedaPrecio(lista):
+    codProd = 0
+    while codProd != -1:
+        codProd = int(input("Codigo a buscar (inrese -1 para terminar): "))
+        if codProd == -1:
+            print("Terminado")
+        else :
+            pos = search(codProd, lista)
+            if pos == -1:
+                print("Producto no encontrado")
+            else :
+                print(precios[pos])
+        
     
+    
+carga(4)
+busquedaPrecio(productos)
+maX(precios)
+
+# --------------------------------------
