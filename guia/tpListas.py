@@ -222,3 +222,184 @@ busquedaPrecio(productos)
 maX(precios)
 
 # --------------------------------------
+
+# Ejercicio 1 tps finales
+
+legajos = []
+notas = []
+
+def cargaDatos():
+    legajo = 0
+    while legajo != -1:
+        legajo = int(input("Ingrese un numero de legajo: "))
+        nota = int(input("Ingrese la nota del alumno: "))
+        if legajo > 0 and nota > 0 and nota <= 10:
+            legajos.append(legajo)
+            notas.append(nota)
+
+
+
+def showNotas():
+    for i in range (len(notas)):
+        print(legajos[i],"---------->",notas[i])    
+
+def cuatroMas():
+    masQueCuatro = []
+    for i in range (len(notas)):
+        if notas[i] >= 4:
+            masQueCuatro.append(notas[i])
+    print("cantidad de alumnos que aprobaron: ", len(masQueCuatro))
+    
+    
+
+def cuatroMenos():
+    menosQueCuatro = []
+    for i in range (len(notas)):
+        if notas[i] < 4:
+            menosQueCuatro.append(notas[i])
+    print("cantidad de alumnos que desaprobaron: ", len(menosQueCuatro))
+
+def promedio():
+    notasProm = 0
+    for i in range(len(notas)):
+        notasProm = notas[i] + notasProm   
+    promedioTotal = notasProm / len(notas)
+    print("La nota promedio es: ", promedioTotal)
+    return promedioTotal
+        
+def masDelProm():
+    masProm = []
+    legajosMasProm = []
+    prom = promedio()
+    for i in range(len(notas)):
+        if notas[i] >= prom:
+            masProm.append(notas[i])
+            legajosMasProm.append(legajos[i])
+    for i in range(len(masProm)):
+        print(legajosMasProm[i],"---->",masProm[i])
+
+cargaDatos()
+showNotas()
+cuatroMas()
+cuatroMenos()
+promedio()
+masDelProm()
+
+# ------------------------------------------------------
+
+# Ejercicio 2 tps finales 
+
+unidades= []
+metrosTotales = []
+expensas = []
+
+def busqueda(value, list):
+    pos = -1
+    i = 0
+    while pos == -1 and i < len(list):
+        if list[i] == value:
+            pos = i
+        i = i+1
+    return pos
+
+def ingresoDatos():
+    i = 0
+    while i < 3:
+        unidad =  input("Inrese una unidad: ")
+        metros = int(input("Ingrese la cantidad de metros cuadrados: "))
+        exists = busqueda(unidad, unidades)
+        if exists == -1:
+            unidades.append(unidad)
+            metrosTotales.append(metros)
+            i += 1
+    for i in range(len(unidades)):
+        print("unidad: ",unidades[i],"----->", metrosTotales[i],"m" )
+    
+def expPromedio(lista):
+    promedio = 0
+    for i in range(len(lista)):
+        promedio = promedio + lista[i]
+        promedioFull = promedio / len(lista)
+    return promedioFull
+
+    
+def calculoExp():
+    precioMetro = int(input("Ingresar precio por metro: "))
+    for i in range(len(metrosTotales)):
+        totalDpto = precioMetro * metrosTotales[i]
+        expensas.append(totalDpto)
+    for i in range(len(metrosTotales)):
+        print("Unidad: ",unidades[i],"----paga-->",expensas[i])
+    promedioTotal = expPromedio(expensas)
+    print("El precio promedio de expensas es de: $",promedioTotal)
+    
+    
+ingresoDatos()
+calculoExp()
+
+# --------------------------------------
+
+# simulacro ej 1
+
+socios = []
+anios = []
+cadete = 500
+mayor = 1000
+vitalicio = 50
+
+def ingresoDatos():
+    socio =""
+    while socio != "f":
+        socio = input("Ingrese C, M, o V .Para finalizar ingrese f ")
+        if socio != "f":
+            anio = int(input("Ingrese el anio de alta "))
+            if (socio == "C" or socio == "M" or socio == "V") and (anio >= 1970):
+                socios.append(socio)
+                anios.append(anio)
+            else:
+                print("error ingresar de nuevo ")
+    print(socios, anios)
+    
+def calcAn(anio):
+   antiguedad = 2023 - anio
+   return antiguedad
+
+def sumaTotal(arr1, arr2, arr3):
+    total = arr1 + arr2 + arr3 
+    return total
+
+def sumaCat(arr, cuota):
+    total = len(arr) * cuota
+    return total
+    
+def calculo():
+    cadetes = []
+    mayores = []
+    vitaliciosFree = []
+    vitalicios = []
+    for i in range(len(socios)):
+        if socios[i] == "C":
+            cadetes.append(socios[i])
+            
+        if socios[i] == "M":
+            mayores.append(socios[i])
+        
+        if socios[i] == "V" and (calcAn(anios[i]) > 30):
+            vitaliciosFree.append(socios[i])
+        
+        if socios[i] == "V" and (calcAn(anios[i]) < 30):
+            vitalicios.append(socios[i])
+    print("cadetes ----> ", cadetes,"mayores ----> ", mayores, "vitalicios ----> ", vitalicios, "vitaliciosFree ----> ",vitaliciosFree)
+    
+    totalCadetes = sumaCat(cadetes, cadete)
+    totalMayores = sumaCat(mayores, mayor)
+    totalVitalicios = sumaCat(vitalicios, vitalicio)
+    
+    recaudacion = sumaTotal(totalCadetes, totalMayores, totalVitalicios)
+    print("Recaudacion total: $", recaudacion)
+    
+
+ingresoDatos()
+calculo()
+
+# --------------------------------------------
